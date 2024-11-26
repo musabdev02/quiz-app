@@ -22,7 +22,7 @@ A fun and interactive Quiz App built with HTML, CSS, and JavaScript. This projec
 5. (Optional) Retry the quiz for a better score!
 
 ## Live Demo 
-Check out the live demo of the app here: [Live Demo]([https://musabdev02.github.io/quiz-app/))
+Check out the live demo of the app here: [Live Demo](https://musabdev02.github.io/quiz-app/)
 
 ## Contribution 🤝
 Contributions are welcome! If you’d like to improve the project, feel free to fork the repository and submit a pull request.
