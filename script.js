@@ -141,12 +141,12 @@ const startGame = () =>{
     totalQuizs.textContent = quizQuestions.length;
     finalScore.textContent =  userScore;
     if(userScore > 15){
-      result_img.src = "/assets/win.png";
+      result_img.src = "assets/win.png";
       resultTitle.textContent = "Congrats!";
       loseMsg.style.display = "none";
     }
     else{
-      result_img.src = "/assets/lose.png";
+      result_img.src = "assets/lose.png";
       resultTitle.textContent = "You Lose!";
       loseMsg.style.display = "block";
     }
