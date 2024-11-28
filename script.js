@@ -16,6 +16,10 @@ let finalScore = document.getElementById("finalScore");
 let totalQuizs = document.getElementById("totalQuizs");
 let loseMsg = document.getElementById("loseMsg");
 const playAgain = document.getElementById("playAgain");
+// Info
+const info = document.getElementById("info");
+const infoOpen = document.querySelector(".openInfo");
+const infoClose = document.querySelector(".closeInfo");
 
 
 // Others
@@ -202,3 +206,14 @@ playAgain.addEventListener("click", ()=>{
   result.style.display = "none";
   startGame();
 });
+
+
+// infoBox
+infoOpen.addEventListener("click", ()=>{
+  info.style.visibility = "visible";
+  info.style.opacity = 1;
+});
+infoClose.addEventListener("click", ()=>{
+  info.style.visibility = "hidden";
+  info.style.opacity = 0;
+})

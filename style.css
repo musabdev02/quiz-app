@@ -162,19 +162,72 @@ button{
     color: var(--red-border);
 }
 
-/* Hide sections initially */
-.hidden {
-    opacity: 0;
+/* info */
+.openInfo{
+    position: absolute;
+    right: 2%;
+    bottom: 5%;
+}
+.openInfo img{
+    width: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.openInfo img:hover{
+    transform: scale(1.1);
+}
+#info{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.5s linear;
 }
-  /* Show sections */
-.visible {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
+.info_box{
+    width: 350px;
+    height: 340px;
+    background: #e7e7e7;
+    border-radius: 8px;
+    padding: 34px;
+    color: #000;
+    position: relative;
 }
-
+.info_box h4{
+    font-size: 24px;
+    color: gray;
+}
+.shoutout{
+    margin-block-start: 24px;
+}
+.shoutout p{
+    font-size: 18px;
+    margin-block: 10px;
+}
+.shoutout p span{
+    font-weight: 600;
+    color: gray;
+}
+.shoutout p a{
+    color: #000;
+    margin-left: 10px;
+    text-decoration: none;
+}
+.shoutout p a:hover{
+    text-decoration: underline;
+}
+.closeInfo{
+    position: absolute;
+    cursor: pointer;
+    right: 4%;
+    top: 4%;
+    color: gray;
+}
 /* responsive */
 @media screen and (max-width: 900px) {
     #app{
@@ -203,6 +256,9 @@ button{
     #main ul li{
         width: 75vw;
     }
+    .openInfo img{
+        width: 30px;
+    }
 }
 @media screen and (max-width: 550px) {
     #introduction img, #result img{
@@ -215,5 +271,8 @@ button{
     }
     #main ul li{
         font-size: 18px;
+    }
+    .info_box{
+        width: 80%;
     }
 }
