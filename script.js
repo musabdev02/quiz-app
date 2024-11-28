@@ -20,6 +20,10 @@ const playAgain = document.getElementById("playAgain");
 const info = document.getElementById("info");
 const infoOpen = document.querySelector(".openInfo");
 const infoClose = document.querySelector(".closeInfo");
+// Audios
+let correctAudio = new Audio('sounds/correct.mp3');
+let wrongAudio = new Audio('sounds/wrong.mp3');
+let clickAudio = new Audio("sounds/click.mp3");
 
 
 // Others
@@ -150,9 +154,7 @@ const startGame = () =>{
       loseMsg.style.display = "none";
     }
     else{
-      result_img.src = "assets/lose.png";
-      resultTitle.textContent = "You Lose!";
-      loseMsg.style.display = "block";
+      let failedAudio = new Audio("sounds/fail.mp3").play();
     }
   }
  
@@ -164,9 +166,11 @@ optionsSecl.addEventListener("click", (elem)=>{
   if(userAns === quizQuestions[indexOfQ].correctAnswer){
       userScore++;
       elem.target.classList.add("greenAns");
+      correctAudio.play();
   }
   else{
       elem.target.classList.add("redAns");
+      wrongAudio.play();
       const correctOption = Array.from(optionsSecl.children).find(
           (option) => option.textContent === quizQuestions[indexOfQ].correctAnswer
       );
@@ -187,7 +191,8 @@ continueGame.addEventListener("click", ()=>{
     });
     continueGame.style.display = "none";
     if(indexOfQ <= quizQuestions.length){
-        startGame();      
+        startGame();
+        clickAudio.play();
     }
 })
 
@@ -195,6 +200,7 @@ continueGame.addEventListener("click", ()=>{
 startBtn.addEventListener("click", ()=>{
     introduction.style.display = "none";
     main.style.display = "flex";
+    clickAudio.play();
     startGame();
 });
 
@@ -204,6 +210,7 @@ playAgain.addEventListener("click", ()=>{
   userScore = 0;
   main.style.display = "flex";
   result.style.display = "none";
+  clickAudio.play();
   startGame();
 });
 
@@ -216,4 +223,5 @@ infoOpen.addEventListener("click", ()=>{
 infoClose.addEventListener("click", ()=>{
   info.style.visibility = "hidden";
   info.style.opacity = 0;
-})
+});
+
